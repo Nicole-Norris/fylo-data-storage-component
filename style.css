@@ -1,0 +1,237 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
+
+:root {
+  --paleBlue: hsl(243, 100%, 93%);
+  --grayishBlue: hsl(229, 7%, 55%);
+  --darkBlue: hsl(228, 56%, 26%);
+  --veryDarkBlue: hsl(229, 57%, 11%);
+  --gradient: linear-gradient(
+    90deg,
+    hsl(6, 100%, 80%) 0%,
+    hsl(335, 69%, 35%) 100%
+  );
+}
+
+* {
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background: url(/images/bg-desktop.png) center bottom no-repeat;
+  transform: translateY(20%);
+  z-index: -1;
+}
+
+body {
+  font-size: 14px;
+  font-family: "Raleway", sans-serif;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--veryDarkBlue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin: 0;
+}
+
+.left-block {
+  height: 210px;
+  width: calc(90% * 2.3 / 5);
+  background-color: var(--darkBlue);
+  border-radius: 10px 100px 10px 10px;
+  padding: 4% 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  position: relative;
+}
+
+.left-block img {
+  width: 140px;
+}
+
+.left-block div {
+  display: flex;
+  flex-direction: row;
+  width: 170px;
+  justify-content: space-between;
+}
+
+.left-block div img {
+  width: 48px;
+  height: 45px;
+  margin-right: 6px;
+  padding: 13px 12px;
+  border-radius: 12px;
+  background-color: var(--veryDarkBlue);
+}
+
+.right-block {
+  height: 140px;
+  width: calc(90% * 2.9 / 5);
+  background-color: var(--darkBlue);
+  border-radius: 10px;
+  padding: 4% 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  position: relative;
+  overflow: visible;
+}
+
+.right-block .remain {
+  height: 17px;
+  display: flex;
+  font-size: 15px;
+  color: var(--paleBlue);
+  font-weight: 400;
+}
+
+.right-block p strong {
+  font-weight: 700;
+}
+
+.graph {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 5px;
+}
+
+.graph .bar {
+  width: 100%;
+  height: 15px;
+  margin-bottom: 8px;
+  border-radius: 7.5px;
+  background-color: var(--veryDarkBlue);
+}
+
+.graph .bar .bar-color {
+  width: calc(100% * 815 / 1000);
+  height: inherit;
+  background-image: var(--gradient);
+  border-radius: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.graph .bar .bar-color .circle {
+  background-color: var(--paleBlue);
+  border-radius: inherit;
+  width: 12px;
+  height: 12px;
+  margin: 2px;
+}
+
+.graph .word {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-self: flex-end;
+  font-size: 12px;
+  color: var(--paleBlue);
+  font-weight: 700;
+}
+
+.bubble {
+  position: absolute;
+  background-color: white;
+  width: 185px;
+  height: 75px;
+  top: 0;
+  right: 10%;
+  transform: translateY(-75%);
+  border-radius: 10px 10px 0 10px;
+  overflow: visible;
+  border: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.triangle {
+  position: absolute;
+  border-style: solid;
+  border-width: 10px 25px 30px 0;
+  border-color: transparent white;
+  width: 0;
+  height: 0;
+  bottom: 0;
+  right: 0;
+  transform: translateY(50%);
+}
+
+.bubble p {
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-weight: 700;
+  color: var(--grayishBlue);
+  width: 70%;
+}
+
+.bubble strong {
+  font-size: 40px;
+  font-weight: 700;
+  color: black;
+}
+
+@media (max-width: 800px) {
+  .content {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    overflow: visible;
+  }
+
+  .left-block {
+    width: 100%;
+    height: 160px;
+    margin-bottom: 20px;
+    padding: 6% 10%;
+  }
+
+  .left-block img {
+    width: 120px;
+  }
+
+  .right-block {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .right-block .remain p {
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+  }
+
+  .right-block .graph {
+    width: 90%;
+  }
+
+  .bubble {
+    border-radius: 10px;
+    transform: translate(-6%, 150%);
+  }
+
+  .bubble .triangle {
+    display: none;
+  }
+}
