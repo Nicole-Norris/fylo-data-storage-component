@@ -22,7 +22,7 @@ body::before {
   position: absolute;
   width: 100vw;
   height: 100vh;
-  background: url(/images/bg-desktop.png) center bottom no-repeat;
+  background: url(./images/bg-desktop.png) center bottom no-repeat;
   transform: translateY(20%);
   z-index: -1;
 }
